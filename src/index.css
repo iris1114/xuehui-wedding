@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+/* ============================================
+   WEDDING WEBSITE - DESIGN TOKENS & THEME
+   ============================================ */
+
+@theme {
+  /* Color Palette - Elegant Wedding Theme */
+  --color-cream: #FAF8F5;
+  --color-cream-dark: #F5F0E8;
+  --color-charcoal: #2D2D2D;
+  --color-charcoal-light: #4A4A4A;
+  --color-muted: #B8B0A8;
+  --color-muted-light: #D4CFC8;
+  --color-accent: #8B7355;
+  --color-white: #FFFFFF;
+  --color-error: #C75050;
+  --color-success: #5A8B6A;
+  
+  /* Font Families */
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-sans: "Montserrat", "Helvetica Neue", sans-serif;
+  
+  /* Font Sizes - Responsive Scale */
+  --text-display: clamp(2.5rem, 8vw, 5rem);
+  --text-heading: clamp(1.75rem, 4vw, 2.5rem);
+  --text-subheading: clamp(1.25rem, 2.5vw, 1.5rem);
+  --text-body: clamp(0.875rem, 1.5vw, 1rem);
+  --text-small: clamp(0.75rem, 1.25vw, 0.875rem);
+  
+  /* Spacing */
+  --spacing-section: clamp(4rem, 10vh, 8rem);
+  
+  /* Animation */
+  --ease-elegant: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-slow: 0.8s;
+  --duration-medium: 0.5s;
+  --duration-fast: 0.3s;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Paper Texture Effect - Pure CSS */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(139, 115, 85, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 115, 85, 0.02) 0%, transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(139, 115, 85, 0.02) 0%, transparent 40%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-charcoal-light);
+}
+
+/* Utility Classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Section Container */
+.section-container {
+  @apply max-w-4xl mx-auto px-6 md:px-8 lg:px-12;
+}
+
+/* Decorative Line */
+.decorative-line {
+  @apply w-16 h-px bg-muted mx-auto;
+}
+
+/* Button Base */
+.btn-primary {
+  @apply px-8 py-3 border border-charcoal text-charcoal font-sans text-sm tracking-widest uppercase
+         transition-all duration-300 hover:bg-charcoal hover:text-cream
+         focus:outline-none focus:ring-2 focus:ring-charcoal focus:ring-offset-2 focus:ring-offset-cream
+         min-h-[44px] flex items-center justify-center;
+}
+
+.btn-outline {
+  @apply px-6 py-3 border border-muted text-charcoal-light font-sans text-sm tracking-wider
+         transition-all duration-300 hover:border-charcoal hover:text-charcoal
+         focus:outline-none focus:ring-2 focus:ring-muted focus:ring-offset-2 focus:ring-offset-cream
+         min-h-[44px] flex items-center justify-center;
+}
+
+/* Form Input */
+.form-input {
+  @apply w-full px-4 py-3 bg-white/50 border border-muted-light rounded-none
+         font-sans text-charcoal placeholder:text-muted
+         transition-all duration-300
+         focus:outline-none focus:border-charcoal focus:bg-white
+         min-h-[44px];
+}
+
+.form-label {
+  @apply block text-sm font-sans text-charcoal-light tracking-wide mb-2;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-muted);
+  color: var(--color-charcoal);
+}
