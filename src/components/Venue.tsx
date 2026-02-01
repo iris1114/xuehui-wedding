@@ -7,8 +7,8 @@ interface VenueInfo {
 }
 
 const venueData: VenueInfo = {
-  name: "The Ritz-Carlton, Millenia Singapore",
-  address: "7 Raffles Avenue, Singapore 039799",
+  name: "Kotak Glass House",
+  address: "2111, Jalan Permas Utara, Bandar Baru Permas Jaya, 81750 Masai, Johor Darul Ta'zim, Malaysia",
 };
 
 // Generate Google Maps URL

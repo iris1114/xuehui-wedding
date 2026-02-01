@@ -1,61 +1,57 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 interface ScheduleEvent {
-  time: string
-  title: string
-  description: string
-  icon: string
+  time: string;
+  title: string;
+  description: string;
+  icon: string;
 }
 
 const scheduleData: ScheduleEvent[] = [
   {
-    time: '10:30',
-    title: 'Welcome & Registration',
-    description: 'Guests arrive and sign the guestbook',
-    icon: '🤍',
+    time: "10:00",
+    title: "Welcome Cocktail Reception",
+    description: "Guests arrive and enjoy cocktails",
+    icon: "🥂",
   },
   {
-    time: '11:00',
-    title: 'Wedding Ceremony',
-    description: 'Exchange of vows in the garden pavilion',
-    icon: '💍',
+    time: "11:00",
+    title: "Wedding Ceremony",
+    description: "Exchange of vows in the garden pavilion",
+    icon: "💍",
   },
   {
-    time: '11:30',
-    title: 'Tea Ceremony',
-    description: 'Traditional tea ceremony with family',
-    icon: '🍵',
+    time: "12:00 - 14:00",
+    title: "Lunch Reception",
+    description: "",
+    icon: "🍽️",
   },
-  {
-    time: '12:00',
-    title: 'Lunch Reception',
-    description: 'Celebrate with a festive banquet',
-    icon: '🥂',
-  },
-  {
-    time: '15:00',
-    title: 'Farewell',
-    description: 'Thank you for sharing our joy',
-    icon: '💐',
-  },
-]
+];
 
 // Timeline connector line
 function TimelineConnector({ isLast }: { isLast: boolean }) {
-  if (isLast) return null
-  
+  if (isLast) return null;
+
   return (
     <div className="absolute left-6 md:left-8 top-14 w-px h-full bg-muted-light" />
-  )
+  );
 }
 
 // Schedule card component
-function ScheduleCard({ event, index, isLast }: { event: ScheduleEvent; index: number; isLast: boolean }) {
+function ScheduleCard({
+  event,
+  index,
+  isLast,
+}: {
+  event: ScheduleEvent;
+  index: number;
+  isLast: boolean;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -30 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{
         duration: 0.6,
         delay: index * 0.15,
@@ -95,7 +91,7 @@ function ScheduleCard({ event, index, isLast }: { event: ScheduleEvent; index: n
         </p>
       </div>
     </motion.div>
-  )
+  );
 }
 
 export default function Schedule() {
@@ -132,5 +128,5 @@ export default function Schedule() {
         </div>
       </div>
     </section>
-  )
+  );
 }

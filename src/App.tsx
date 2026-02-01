@@ -1,11 +1,11 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Countdown from './components/Countdown'
-import Schedule from './components/Schedule'
-import Venue from './components/Venue'
-import DressCode from './components/DressCode'
-import RSVP from './components/RSVP'
-import Footer from './components/Footer'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Countdown from "./components/Countdown";
+import Schedule from "./components/Schedule";
+import Venue from "./components/Venue";
+import DressCode from "./components/DressCode";
+import RSVP from "./components/RSVP";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -22,20 +22,20 @@ export default function App() {
         <Countdown />
 
         {/* Wedding Day Schedule */}
-        <Schedule />
+        {/* <Schedule /> */}
 
         {/* Venue Information */}
         <Venue />
 
         {/* Dress Code */}
-        <DressCode />
+        {/* <DressCode /> */}
 
         {/* RSVP Form */}
-        <RSVP />
+        {/* <RSVP /> */}
       </main>
 
       {/* Footer */}
       <Footer />
     </div>
-  )
+  );
 }
