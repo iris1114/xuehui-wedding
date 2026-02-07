@@ -106,7 +106,7 @@ export default function DressCode() {
   };
 
   return (
-    <section id="dresscode" className="py-16 md:py-24 lg:py-32">
+    <section id="dresscode">
       <div className="section-container">
         {/* Section Header */}
         <motion.div
@@ -136,12 +136,14 @@ export default function DressCode() {
           {/* Dress Code Description */}
           <motion.div variants={itemVariants} className="text-center mb-12">
             <p className="font-serif text-2xl md:text-3xl text-charcoal mb-4">
-              Semi-Formal / Earth Tones
+              Earth Tones / 大地色系
             </p>
             <p className="font-sans text-sm md:text-base text-charcoal-light leading-relaxed max-w-xl mx-auto">
               We kindly invite you to dress in elegant earth tones to complement
-              our celebration. Think warm neutrals, soft greens, and muted
-              natural hues.
+              our celebration.
+            </p>
+            <p className="font-sans text-sm md:text-base text-charcoal-light leading-relaxed max-w-xl mx-auto">
+              诚挚邀请您一起穿大地色系的衣服，与我们共创美好的回忆。
             </p>
           </motion.div>
 
@@ -177,7 +179,7 @@ export default function DressCode() {
           </motion.div>
 
           {/* Color Palette */}
-          <motion.div variants={itemVariants}>
+          {/* <motion.div variants={itemVariants}>
             <p className="font-sans text-xs md:text-sm tracking-[0.2em] text-muted uppercase text-center mb-8">
               Suggested Color Palette
             </p>
@@ -186,7 +188,7 @@ export default function DressCode() {
                 <ColorSwatchCard key={color.hex} color={color} index={index} />
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

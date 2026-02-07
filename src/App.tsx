@@ -22,16 +22,16 @@ export default function App() {
         <Countdown />
 
         {/* Wedding Day Schedule */}
-        {/* <Schedule /> */}
+        <Schedule />
 
         {/* Venue Information */}
         <Venue />
 
         {/* Dress Code */}
-        {/* <DressCode /> */}
+        <DressCode />
 
         {/* RSVP Form */}
-        {/* <RSVP /> */}
+        <RSVP />
       </main>
 
       {/* Footer */}

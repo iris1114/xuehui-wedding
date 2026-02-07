@@ -23,7 +23,7 @@ const scheduleData: ScheduleEvent[] = [
   {
     time: "12:00 - 14:00",
     title: "Lunch Reception",
-    description: "",
+    description: "A celebratory western buffet lunch",
     icon: "🍽️",
   },
 ];

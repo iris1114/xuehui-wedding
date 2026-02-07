@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <motion.footer
@@ -22,7 +22,7 @@ export default function Footer() {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, type: 'spring' }}
+            transition={{ delay: 0.2, type: "spring" }}
             className="flex justify-center gap-2 mb-6"
           >
             <svg
@@ -35,7 +35,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Main text */}
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -43,7 +43,7 @@ export default function Footer() {
             className="font-serif text-xl md:text-2xl text-charcoal italic mb-4"
           >
             With love,
-          </motion.p>
+          </motion.p> */}
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export default function Footer() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="font-serif text-2xl md:text-3xl text-charcoal tracking-wide"
           >
-            Xue Hui & Yi Kai
+            Yi Kai & Xue Hui
           </motion.p>
 
           {/* Copyright */}
@@ -68,5 +68,5 @@ export default function Footer() {
         </div>
       </div>
     </motion.footer>
-  )
+  );
 }

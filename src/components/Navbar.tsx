@@ -81,7 +81,7 @@ export default function Navbar() {
               onClick={() => scrollToSection("home")}
               className="font-serif text-lg md:text-xl tracking-wider text-charcoal hover:text-charcoal-light transition-colors"
             >
-              XH & YK
+              YK & XH
             </button>
 
             {/* Desktop Navigation */}

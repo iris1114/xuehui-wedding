@@ -151,7 +151,7 @@ export default function Hero() {
           />
 
           {/* Floating animation wrapper */}
-          <motion.div
+          {/* <motion.div
             animate={{
               y: [0, -8, 0],
             }}
@@ -164,10 +164,10 @@ export default function Hero() {
           >
             <img
               src={heroImage}
-              alt="Xue Hui & Yi Kai"
+              alt="Yi Kai & Xue Hui"
               className="w-100 h-100 md:w-100 md:h-100 lg:w-100 lg:h-100 object-contain mx-auto"
             />
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Text Content */}
@@ -197,11 +197,11 @@ export default function Hero() {
             variants={itemVariants}
             className="font-serif text-[2.25rem] md:text-5xl lg:text-6xl font-light tracking-wide text-charcoal leading-tight mb-3 md:mb-4"
           >
-            <span className="block">XUE HUI</span>
+            <span className="block">YI KAI</span>
             <span className="font-serif text-xl md:text-2xl font-light text-muted my-1 md:my-2 block">
               &
             </span>
-            <span className="block">YI KAI</span>
+            <span className="block">XUE HUI</span>
           </motion.h1>
 
           {/* Decorative Line */}

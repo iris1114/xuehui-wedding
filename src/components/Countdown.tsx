@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface TimeLeft {
-  days: number
-  hours: number
-  minutes: number
-  seconds: number
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
 }
 
 // Wedding date: April 18, 2026
-const WEDDING_DATE = new Date('2026-04-18T11:00:00')
+const WEDDING_DATE = new Date("2026-04-18T11:00:00");
 
 function calculateTimeLeft(): TimeLeft {
-  const now = new Date()
-  const difference = WEDDING_DATE.getTime() - now.getTime()
+  const now = new Date();
+  const difference = WEDDING_DATE.getTime() - now.getTime();
 
   if (difference <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
 
   return {
@@ -24,18 +24,18 @@ function calculateTimeLeft(): TimeLeft {
     hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
     minutes: Math.floor((difference / 1000 / 60) % 60),
     seconds: Math.floor((difference / 1000) % 60),
-  }
+  };
 }
 
 // Animated number component with flip effect
 function AnimatedDigit({ value, label }: { value: number; label: string }) {
-  const [displayValue, setDisplayValue] = useState(value)
+  const [displayValue, setDisplayValue] = useState(value);
 
   useEffect(() => {
-    setDisplayValue(value)
-  }, [value])
+    setDisplayValue(value);
+  }, [value]);
 
-  const formattedValue = displayValue.toString().padStart(2, '0')
+  const formattedValue = displayValue.toString().padStart(2, "0");
 
   return (
     <div className="flex flex-col items-center">
@@ -60,7 +60,7 @@ function AnimatedDigit({ value, label }: { value: number; label: string }) {
         {label}
       </span>
     </div>
-  )
+  );
 }
 
 // Separator dot
@@ -69,28 +69,28 @@ function Separator() {
     <div className="flex flex-col items-center justify-center px-2 md:px-4 lg:px-6 pt-2">
       <motion.div
         animate={{ opacity: [1, 0.3, 1] }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         className="flex flex-col gap-2"
       >
         <span className="w-1 h-1 rounded-full bg-muted" />
         <span className="w-1 h-1 rounded-full bg-muted" />
       </motion.div>
     </div>
-  )
+  );
 }
 
 export default function Countdown() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft())
-  const [hasMounted, setHasMounted] = useState(false)
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    setHasMounted(true)
+    setHasMounted(true);
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
 
-    return () => clearInterval(timer)
-  }, [])
+    return () => clearInterval(timer);
+  }, []);
 
   // Prevent hydration mismatch
   if (!hasMounted) {
@@ -114,14 +114,14 @@ export default function Countdown() {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   return (
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: '-100px' }}
+      viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
       className="py-16 md:py-24 bg-cream-dark/30"
     >
@@ -156,7 +156,7 @@ export default function Countdown() {
           </motion.div>
 
           {/* Wedding Date */}
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -164,9 +164,9 @@ export default function Countdown() {
             className="mt-10 md:mt-14 font-serif text-lg md:text-xl text-charcoal-light italic"
           >
             April 18, 2026
-          </motion.p>
+          </motion.p> */}
         </div>
       </div>
     </motion.section>
-  )
+  );
 }
