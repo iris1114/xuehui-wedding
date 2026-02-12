@@ -7,12 +7,11 @@ interface ColorSwatch {
 }
 
 const earthToneColors: ColorSwatch[] = [
-  { name: "Warm Taupe", hex: "#A67B5B" },
-  { name: "Dusty Rose", hex: "#C9A9A6" },
-  { name: "Sage Green", hex: "#9CAF88" },
-  { name: "Champagne", hex: "#D4C4A8", textDark: true },
-  { name: "Terracotta", hex: "#C67D5E" },
-  { name: "Soft Mocha", hex: "#8B7355" },
+  { name: "Off White / 奶白色", hex: "#F5F2EA" },
+  { name: "Almond / 米杏色", hex: "#E9DCC0" },
+  { name: "Khaki / 卡其色", hex: "#D9B99B" },
+  { name: "Caramel / 棕褐色", hex: "#B88E74" },
+  { name: "Deep Coffee / 深啡色", hex: "#5D4D4A", textDark: true },
 ];
 
 // Color swatch component
@@ -179,16 +178,16 @@ export default function DressCode() {
           </motion.div>
 
           {/* Color Palette */}
-          {/* <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="pb-8">
             <p className="font-sans text-xs md:text-sm tracking-[0.2em] text-muted uppercase text-center mb-8">
               Suggested Color Palette
             </p>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-4">
+            <div className="flex flex-wrap justify-center gap-6">
               {earthToneColors.map((color, index) => (
                 <ColorSwatchCard key={color.hex} color={color} index={index} />
               ))}
             </div>
-          </motion.div> */}
+          </motion.div>
         </motion.div>
       </div>
     </section>

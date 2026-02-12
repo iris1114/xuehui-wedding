@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import venueImage from "../assets/venue.png";
+import venueImage from "../assets/venue2.png";
 
 interface VenueInfo {
   name: string;
@@ -8,7 +8,8 @@ interface VenueInfo {
 
 const venueData: VenueInfo = {
   name: "Kotak Glass House",
-  address: "2111, Jalan Permas Utara, Bandar Baru Permas Jaya, 81750 Masai, Johor Darul Ta'zim, Malaysia",
+  address:
+    "2111, Jalan Permas Utara, Bandar Baru Permas Jaya, 81750 Masai, Johor Darul Ta'zim, Malaysia",
 };
 
 // Generate Google Maps URL

@@ -1,5 +1,8 @@
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import heroImage from "../assets/hero.png";
+import gsap from "gsap";
+import heroImageMobile from "../assets/hero.jpeg";
+import heroImagePc from "../assets/hero_pc.png";
 
 // Decorative SVG ornament
 const Ornament = ({ className = "" }: { className?: string }) => (
@@ -83,6 +86,37 @@ const CornerDecoration = ({
 };
 
 export default function Hero() {
+  const heroImageRef = useRef<HTMLDivElement>(null);
+  const welcomeTextRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      tl.fromTo(
+        heroImageRef.current,
+        { opacity: 0, scale: 0.98 },
+        { opacity: 1, scale: 1, duration: 1.1 }
+      ).fromTo(
+        welcomeTextRef.current,
+        { opacity: 0, y: 32 },
+        { opacity: 1, y: 0, duration: 0.85 },
+        "-=0.4"
+      );
+      tl.to(
+        welcomeTextRef.current,
+        {
+          y: -6,
+          duration: 2,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        },
+        "+=0.4"
+      );
+    });
+    return () => ctx.revert();
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -106,26 +140,10 @@ export default function Hero() {
     },
   };
 
-  // Hero image animation variants
-  const imageVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.8,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 1.2,
-        ease: [0.4, 0, 0.2, 1] as const,
-      },
-    },
-  };
-
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col overflow-hidden"
     >
       {/* Corner Decorations */}
       <CornerDecoration position="top-left" />
@@ -133,44 +151,92 @@ export default function Hero() {
       <CornerDecoration position="bottom-left" />
       <CornerDecoration position="bottom-right" />
 
-      {/* Content */}
-      <div className="text-center px-6 py-24 md:py-20">
-        {/* Hero Image with animations */}
-        <motion.div
-          variants={imageVariants}
-          initial="hidden"
-          animate="visible"
-          className="relative mx-auto mb-6 md:mb-8"
-        >
-          {/* Subtle glow effect behind image */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.15 }}
-            transition={{ delay: 0.5, duration: 1.5 }}
-            className="absolute inset-0 blur-3xl bg-charcoal/30 rounded-full scale-75"
-          />
-
-          {/* Floating animation wrapper */}
-          {/* <motion.div
-            animate={{
-              y: [0, -8, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: 1,
-              ease: "easeInOut",
-            }}
-            className="relative"
+      {/* Hero Image Block - 手機用 hero.jpeg，PC 用 hero_pc.png */}
+      <div
+        ref={heroImageRef}
+        className="relative w-full h-screen flex-shrink-0 overflow-hidden"
+      >
+        {/* 手機版圖片 */}
+        <img
+          src={heroImageMobile}
+          alt="Yi Kai & Xue Hui"
+          className="absolute inset-0 w-full h-full object-cover object-center md:hidden"
+          loading="eager"
+          fetchPriority="high"
+        />
+        {/* PC 版圖片 */}
+        <img
+          src={heroImagePc}
+          alt="Yi Kai & Xue Hui"
+          className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
+          loading="eager"
+          fetchPriority="high"
+        />
+        {/* 漸層讓標語在淺色牆面上清晰 */}
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-cream/55 via-transparent to-transparent pointer-events-none"
+          aria-hidden
+        />
+        {/* Welcome to our wedding - 手機與 PC 上方皆顯示 */}
+        <div className="absolute inset-0 flex items-start justify-center pt-[40%] sm:pt-[40%] md:pt-30 lg:pt-30 px-4 sm:px-6">
+          <p
+            ref={welcomeTextRef}
+            className="font-script text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-semibold text-charcoal text-center drop-shadow-[0_1px_3px_rgba(255,255,255,0.85)] max-w-[90vw]"
           >
-            <img
-              src={heroImage}
-              alt="Yi Kai & Xue Hui"
-              className="w-100 h-100 md:w-100 md:h-100 lg:w-100 lg:h-100 object-contain mx-auto"
-            />
-          </motion.div> */}
-        </motion.div>
+            Welcome to our wedding!
+          </p>
+        </div>
 
-        {/* Text Content */}
+        {/* Scroll Indicator - 放在第一屏（hero 圖）底部，進站即可看到 */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.5, duration: 1 }}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center gap-2"
+          >
+            <span className="font-sans text-xs tracking-widest text-muted uppercase">
+              Scroll
+            </span>
+            <svg
+              width="16"
+              height="24"
+              viewBox="0 0 16 24"
+              fill="none"
+              className="text-muted"
+            >
+              <rect
+                x="1"
+                y="1"
+                width="14"
+                height="22"
+                rx="7"
+                stroke="currentColor"
+                strokeWidth="1"
+              />
+              <motion.circle
+                cx="8"
+                cy="8"
+                r="2"
+                fill="currentColor"
+                animate={{ cy: [8, 14, 8] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </svg>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Text Content - 保留原本設計 */}
+      <div className="text-center px-6 py-10 sm:py-12 md:py-16 flex-1 flex flex-col items-center justify-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -226,53 +292,6 @@ export default function Hero() {
             className="flex justify-center mt-8 md:mt-12"
           >
             <Ornament />
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.5, duration: 1 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2"
-          >
-            <span className="font-sans text-xs tracking-widest text-muted uppercase">
-              Scroll
-            </span>
-            <svg
-              width="16"
-              height="24"
-              viewBox="0 0 16 24"
-              fill="none"
-              className="text-muted"
-            >
-              <rect
-                x="1"
-                y="1"
-                width="14"
-                height="22"
-                rx="7"
-                stroke="currentColor"
-                strokeWidth="1"
-              />
-              <motion.circle
-                cx="8"
-                cy="8"
-                r="2"
-                fill="currentColor"
-                animate={{ cy: [8, 14, 8] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-            </svg>
           </motion.div>
         </motion.div>
       </div>

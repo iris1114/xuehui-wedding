@@ -4,6 +4,7 @@ import Countdown from "./components/Countdown";
 import Schedule from "./components/Schedule";
 import Venue from "./components/Venue";
 import DressCode from "./components/DressCode";
+import SharePhotos from "./components/SharePhotos";
 import RSVP from "./components/RSVP";
 import Footer from "./components/Footer";
 
@@ -32,6 +33,9 @@ export default function App() {
 
         {/* RSVP Form */}
         <RSVP />
+
+        {/* Share Photos - Google Drive upload */}
+        <SharePhotos />
       </main>
 
       {/* Footer */}

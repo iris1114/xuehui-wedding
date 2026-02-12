@@ -20,6 +20,7 @@
   /* Font Families */
   --font-serif: "Cormorant Garamond", "Georgia", serif;
   --font-sans: "Montserrat", "Helvetica Neue", sans-serif;
+  --font-script: "Dancing Script", cursive;
   
   /* Font Sizes - Responsive Scale */
   --text-display: clamp(2.5rem, 8vw, 5rem);
@@ -100,6 +101,10 @@ body.menu-open {
 
 .font-sans {
   font-family: var(--font-sans);
+}
+
+.font-script {
+  font-family: var(--font-script);
 }
 
 /* Section Container */

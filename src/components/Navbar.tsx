@@ -11,6 +11,7 @@ const navItems: NavItem[] = [
   { id: "schedule", label: "Schedule" },
   { id: "venue", label: "Venue" },
   { id: "dresscode", label: "Dress Code" },
+  { id: "sharephotos", label: "Share Photos" },
   { id: "rsvp", label: "RSVP" },
 ];
 

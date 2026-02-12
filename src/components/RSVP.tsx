@@ -171,7 +171,10 @@ export default function RSVP() {
           className="text-center mb-12 md:mb-16"
         >
           <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
-            期待您的蒞臨 / We Hope You Can Make It
+            期待您的蒞臨
+          </p>
+          <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
+            We Hope You Can Make It
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-charcoal">
             RSVP
