@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const DRIVE_UPLOAD_URL =
-  "https://drive.google.com/drive/folders/1o2aO56UI0wX_Nkpmei18AcDD0qMpElRU?usp=sharing";
+  "https://drive.google.com/drive/folders/1cxpHsMQtcvtENaXvW9qPaq-2xjml-rnY";
 
 // Camera / Photo icon
 function CameraIcon({ className = "" }: { className?: string }) {
