@@ -4,19 +4,15 @@ import venueImage from "../assets/venue2.png";
 interface VenueInfo {
   name: string;
   address: string;
+  googleMapsUrl: string;
 }
 
 const venueData: VenueInfo = {
-  name: "Kotak Glass House",
+  name: "C You Homestay",
   address:
-    "2111, Jalan Permas Utara, Bandar Baru Permas Jaya, 81750 Masai, Johor Darul Ta'zim, Malaysia",
+    "C25, Jalan Bunga Siantan, Taman Plentong Baru, 81750 Masai, Johor Darul Ta'zim",
+  googleMapsUrl: "https://share.google/PobGw4lcMQDFVjJor",
 };
-
-// Generate Google Maps URL
-function getGoogleMapsUrl(address: string): string {
-  const encodedAddress = encodeURIComponent(address);
-  return `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
-}
 
 // Generate Waze URL
 function getWazeUrl(address: string): string {
@@ -102,7 +98,7 @@ export default function Venue() {
           className="text-center mb-12 md:mb-16"
         >
           <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
-            Join Us At
+            地點
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-charcoal">
             The Venue
@@ -119,7 +115,7 @@ export default function Venue() {
           className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto items-center"
         >
           {/* Left Column - Venue Image */}
-          <motion.div variants={itemVariants} className="order-2 md:order-1">
+          {/* <motion.div variants={itemVariants} className="order-2 md:order-1">
             <div className="overflow-hidden ">
               <img
                 src={venueImage}
@@ -127,7 +123,7 @@ export default function Venue() {
                 className="w-full h-auto object-cover"
               />
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Right Column - Venue Details */}
           <motion.div
@@ -154,7 +150,7 @@ export default function Venue() {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               {/* Google Maps Button */}
               <a
-                href={getGoogleMapsUrl(venueData.address)}
+                href={venueData.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline inline-flex items-center justify-center gap-2"

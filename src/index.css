@@ -5,33 +5,34 @@
    ============================================ */
 
 @theme {
-  /* Color Palette - Elegant Wedding Theme */
-  --color-cream: #FAF8F5;
-  --color-cream-dark: #F5F0E8;
-  --color-charcoal: #2D2D2D;
-  --color-charcoal-light: #4A4A4A;
-  --color-muted: #B8B0A8;
-  --color-muted-light: #D4CFC8;
-  --color-accent: #8B7355;
-  --color-white: #FFFFFF;
-  --color-error: #C75050;
-  --color-success: #5A8B6A;
-  
+  /* Color Palette - Festive Red & Gold Wedding Theme (敬茶儀式 inspired) */
+  --color-cream: #f7ded6;
+  --color-cream-dark: #f2cdc2;
+  --color-charcoal: #3b1414;
+  --color-charcoal-light: #6b2a2a;
+  --color-muted: #b08d57;
+  --color-muted-light: #e3cfa0;
+  --color-accent: #b0202b;
+  --color-gold: #fc7e87;
+  --color-white: #ffffff;
+  --color-error: #c75050;
+  --color-success: #5a8b6a;
+
   /* Font Families */
   --font-serif: "Cormorant Garamond", "Georgia", serif;
   --font-sans: "Montserrat", "Helvetica Neue", sans-serif;
   --font-script: "Dancing Script", cursive;
-  
+
   /* Font Sizes - Responsive Scale */
   --text-display: clamp(2.5rem, 8vw, 5rem);
   --text-heading: clamp(1.75rem, 4vw, 2.5rem);
   --text-subheading: clamp(1.25rem, 2.5vw, 1.5rem);
   --text-body: clamp(0.875rem, 1.5vw, 1rem);
   --text-small: clamp(0.75rem, 1.25vw, 0.875rem);
-  
+
   /* Spacing */
   --spacing-section: clamp(4rem, 10vh, 8rem);
-  
+
   /* Animation */
   --ease-elegant: cubic-bezier(0.4, 0, 0.2, 1);
   --duration-slow: 0.8s;
@@ -64,11 +65,33 @@ body::before {
   pointer-events: none;
   z-index: -1;
   opacity: 0.4;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(139, 115, 85, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 115, 85, 0.02) 0%, transparent 40%),
-    radial-gradient(circle at 40% 80%, rgba(139, 115, 85, 0.02) 0%, transparent 40%),
+  background-image:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(176, 32, 43, 0.045) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(201, 162, 39, 0.04) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(176, 32, 43, 0.035) 0%,
+      transparent 40%
+    ),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Festive gold seal watermark - reusable decorative accent */
+.watermark-xi {
+  font-family:
+    "Songti TC", "Noto Serif TC", "Noto Serif SC", "PingFang TC",
+    "Microsoft JhengHei", serif;
+  line-height: 1;
+  user-select: none;
+  color: var(--color-gold);
 }
 
 /* Prevent body scroll when mobile menu is open */

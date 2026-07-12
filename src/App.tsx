@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Countdown from "./components/Countdown";
+import Gallery from "./components/Gallery";
 import Schedule from "./components/Schedule";
 import Venue from "./components/Venue";
 import DressCode from "./components/DressCode";
@@ -29,13 +30,16 @@ export default function App() {
         <Venue />
 
         {/* Dress Code */}
-        <DressCode />
+        {/* <DressCode /> */}
+
+        {/* Photo Gallery */}
+        <Gallery />
 
         {/* RSVP Form */}
         <RSVP />
 
         {/* Share Photos - Google Drive upload */}
-        <SharePhotos />
+        {/* <SharePhotos /> */}
       </main>
 
       {/* Footer */}

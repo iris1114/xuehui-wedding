@@ -10,8 +10,6 @@ const navItems: NavItem[] = [
   { id: "home", label: "Home" },
   { id: "schedule", label: "Schedule" },
   { id: "venue", label: "Venue" },
-  { id: "dresscode", label: "Dress Code" },
-  { id: "sharephotos", label: "Share Photos" },
   { id: "rsvp", label: "RSVP" },
 ];
 
@@ -75,6 +73,11 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
+        {/* Festive gold-red ribbon */}
+        <div
+          aria-hidden
+          className="h-[3px] w-full bg-gradient-to-r from-accent via-gold to-accent"
+        />
         <div className="max-w-5xl mx-auto px-6 md:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo / Names */}

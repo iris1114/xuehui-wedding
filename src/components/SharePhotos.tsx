@@ -99,7 +99,7 @@ export default function SharePhotos() {
             variants={itemVariants}
             className="font-sans text-charcoal-light text-sm md:text-base leading-relaxed mb-2"
           >
-            當天的笑容與感動，我們都想好好收藏。
+            当天的笑容与感动，我们都想好好收藏。
           </motion.p>
           <motion.p
             variants={itemVariants}

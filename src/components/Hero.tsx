@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import heroImageMobile from "../assets/hero.jpeg";
-import heroImagePc from "../assets/hero_pc.png";
+import heroImagePc from "../assets/hero_pc.jpeg";
 
 // Decorative SVG ornament
 const Ornament = ({ className = "" }: { className?: string }) => (
@@ -95,12 +95,12 @@ export default function Hero() {
       tl.fromTo(
         heroImageRef.current,
         { opacity: 0, scale: 0.98 },
-        { opacity: 1, scale: 1, duration: 1.1 }
+        { opacity: 1, scale: 1, duration: 1.1 },
       ).fromTo(
         welcomeTextRef.current,
         { opacity: 0, y: 32 },
         { opacity: 1, y: 0, duration: 0.85 },
-        "-=0.4"
+        "-=0.4",
       );
       tl.to(
         welcomeTextRef.current,
@@ -111,7 +111,7 @@ export default function Hero() {
           yoyo: true,
           ease: "sine.inOut",
         },
-        "+=0.4"
+        "+=0.4",
       );
     });
     return () => ctx.revert();
@@ -151,43 +151,43 @@ export default function Hero() {
       <CornerDecoration position="bottom-left" />
       <CornerDecoration position="bottom-right" />
 
-      {/* Hero Image Block - 手機用 hero.jpeg，PC 用 hero_pc.png */}
+      {/* Hero Image Block - 手机用 hero.jpeg，PC 用 hero_pc.png */}
       <div
         ref={heroImageRef}
         className="relative w-full h-screen flex-shrink-0 overflow-hidden"
       >
-        {/* 手機版圖片 */}
+        {/* 手机版图片 */}
         <img
           src={heroImageMobile}
           alt="Yi Kai & Xue Hui"
-          className="absolute inset-0 w-full h-full object-cover object-center md:hidden"
+          className="absolute  w-full h-full object-cover object-center md:hidden"
           loading="eager"
           fetchPriority="high"
         />
-        {/* PC 版圖片 */}
+        {/* PC 版图片 */}
         <img
           src={heroImagePc}
           alt="Yi Kai & Xue Hui"
-          className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
+          className="absolute  w-full h-full object-cover object-center hidden md:block"
           loading="eager"
           fetchPriority="high"
         />
-        {/* 漸層讓標語在淺色牆面上清晰 */}
+        {/* 渐变让标语在浅色墙面上清晰 */}
         <div
           className="absolute inset-0 bg-gradient-to-b from-cream/55 via-transparent to-transparent pointer-events-none"
           aria-hidden
         />
-        {/* Welcome to our wedding - 手機與 PC 上方皆顯示 */}
-        <div className="absolute inset-0 flex items-start justify-center pt-[40%] sm:pt-[40%] md:pt-30 lg:pt-30 px-4 sm:px-6">
+        {/* Welcome to our wedding - 手机与 PC 上方皆显示 */}
+        {/* <div className="absolute inset-0 flex items-start justify-center pt-[40%] sm:pt-[40%] md:pt-30 lg:pt-30 px-4 sm:px-6">
           <p
             ref={welcomeTextRef}
             className="font-script text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-semibold text-charcoal text-center drop-shadow-[0_1px_3px_rgba(255,255,255,0.85)] max-w-[90vw]"
           >
             Welcome to our wedding!
           </p>
-        </div>
+        </div> */}
 
-        {/* Scroll Indicator - 放在第一屏（hero 圖）底部，進站即可看到 */}
+        {/* Scroll Indicator - 放在第一屏（hero 图）底部，进站即可看到 */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -235,12 +235,20 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Text Content - 保留原本設計 */}
-      <div className="text-center px-6 py-10 sm:py-12 md:py-16 flex-1 flex flex-col items-center justify-center">
+      {/* Text Content - 保留原本设计 */}
+      <div className="relative text-center px-6 py-10 sm:py-12 md:py-16 flex-1 flex flex-col items-center justify-center overflow-hidden">
+        {/* Festive gold watermark */}
+        <span
+          aria-hidden
+          className="watermark-xi pointer-events-none absolute inset-0 flex items-center justify-center text-[16rem] sm:text-[20rem] md:text-[26rem] opacity-[0.08] select-none"
+        >
+          囍
+        </span>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          className="relative z-10"
         >
           {/* Top Ornament */}
           <motion.div
@@ -255,7 +263,7 @@ export default function Hero() {
             variants={itemVariants}
             className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4 md:mb-6"
           >
-            We joyfully invite you to celebrate
+            诚邀您出席我们的新婚喜宴
           </motion.p>
 
           {/* Main Names */}
@@ -263,11 +271,11 @@ export default function Hero() {
             variants={itemVariants}
             className="font-serif text-[2.25rem] md:text-5xl lg:text-6xl font-light tracking-wide text-charcoal leading-tight mb-3 md:mb-4"
           >
-            <span className="block">YI KAI</span>
+            <span className="block">怡 凯</span>
             <span className="font-serif text-xl md:text-2xl font-light text-muted my-1 md:my-2 block">
               &
             </span>
-            <span className="block">XUE HUI</span>
+            <span className="block">雪 蕙</span>
           </motion.h1>
 
           {/* Decorative Line */}
@@ -279,10 +287,10 @@ export default function Hero() {
           {/* Date */}
           <motion.div variants={itemVariants} className="space-y-2">
             <p className="font-sans text-xs md:text-sm tracking-[0.4em] text-charcoal-light uppercase">
-              Saturday
+              星期六
             </p>
-            <p className="font-serif text-xl md:text-3xl tracking-wider text-charcoal">
-              18 APRIL 2026
+            <p className="font-serif text-3xl md:text-3xl tracking-wider text-charcoal">
+              03 / 10 / 2026
             </p>
           </motion.div>
 

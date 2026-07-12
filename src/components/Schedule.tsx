@@ -9,22 +9,16 @@ interface ScheduleEvent {
 
 const scheduleData: ScheduleEvent[] = [
   {
-    time: "10:00",
-    title: "Welcome Cocktail Reception",
-    description: "Guests arrive and enjoy cocktails",
-    icon: "🥂",
-  },
-  {
-    time: "11:00",
-    title: "Wedding Ceremony",
-    description: "Exchange of vows in the garden pavilion",
-    icon: "💍",
-  },
-  {
-    time: "12:00 - 14:00",
-    title: "Lunch Reception",
-    description: "A celebratory western buffet lunch",
+    time: "7:00 PM",
+    title: "自由餐喜宴",
+    description: "Wedding Buffet",
     icon: "🍽️",
+  },
+  {
+    time: "8:00 PM",
+    title: "敬茶仪式",
+    description: "Traditional Tea Ceremony",
+    icon: "🍵",
   },
 ];
 
@@ -107,11 +101,15 @@ export default function Schedule() {
           className="text-center mb-12 md:mb-16"
         >
           <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
-            Wedding Day
+            流程
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-charcoal">
             Schedule
           </h2>
+          <p className="font-serif text-base md:text-lg text-charcoal-light mt-4">
+            03 / 10 / 2026
+          </p>
+          <p className="font-sans text-sm text-muted mt-1">农历八月廿三</p>
           <div className="decorative-line mt-6" />
         </motion.div>
 

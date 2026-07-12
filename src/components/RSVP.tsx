@@ -67,17 +67,17 @@ export default function RSVP() {
     const newErrors: FormErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "請填寫姓名 / Please enter name";
+      newErrors.name = "请填写姓名 / Please enter name";
     }
 
     if (!formData.attendance) {
-      newErrors.attendance = "請選擇 / Please select";
+      newErrors.attendance = "请选择 / Please select";
     }
 
     if (formData.attendance === "yes") {
       const guestsNum = parseInt(formData.guests, 10);
       if (isNaN(guestsNum) || guestsNum < 1) {
-        newErrors.guests = "請至少 1 人 / At least 1 guest";
+        newErrors.guests = "请至少 1 人 / At least 1 guest";
       } else if (guestsNum > 10) {
         newErrors.guests = "最多 10 人 / Max 10 guests";
       }
@@ -96,7 +96,7 @@ export default function RSVP() {
     googleFormData.append(entries.name, formData.name);
     googleFormData.append(
       entries.attendance,
-      formData.attendance === "yes" ? "參加 Accept" : "無法參加 Decline"
+      formData.attendance === "yes" ? "参加 Accept" : "无法参加 Decline",
     );
 
     if (formData.attendance === "yes") {
@@ -149,7 +149,7 @@ export default function RSVP() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -171,7 +171,7 @@ export default function RSVP() {
           className="text-center mb-12 md:mb-16"
         >
           <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
-            期待您的蒞臨
+            期待您的莅临
           </p>
           <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
             We Hope You Can Make It
@@ -252,7 +252,7 @@ export default function RSVP() {
                         className="sr-only"
                       />
                       <span className="font-sans text-sm tracking-wider">
-                        參加 Accept
+                        参加 Accept
                       </span>
                     </label>
                     <label
@@ -271,7 +271,7 @@ export default function RSVP() {
                         className="sr-only"
                       />
                       <span className="font-sans text-sm tracking-wider">
-                        無法參加 Decline
+                        无法参加 Decline
                       </span>
                     </label>
                   </div>
@@ -296,7 +296,7 @@ export default function RSVP() {
                       transition={{ duration: 0.3 }}
                     >
                       <label htmlFor="guests" className="form-label">
-                        人數 Guests
+                        人数 Guests
                       </label>
                       <select
                         id="guests"
@@ -335,7 +335,7 @@ export default function RSVP() {
                     transition={{ delay: 0.3 }}
                   >
                     <label htmlFor="phone" className="form-label">
-                      飲食習慣 Diet
+                      饮食习惯 Diet
                     </label>
                     <select
                       id="phone"
@@ -344,7 +344,7 @@ export default function RSVP() {
                       onChange={handleChange}
                       className="form-input"
                     >
-                      <option value="">請選擇 Select</option>
+                      <option value="">请选择 Select</option>
                       <option value="荤 Meat">荤 Meat</option>
                       <option value="素 Veg">素 Veg</option>
                     </select>
@@ -360,14 +360,14 @@ export default function RSVP() {
                     transition={{ delay: 0.4 }}
                   >
                     <label htmlFor="notes" className="form-label">
-                      備註 Notes
+                      备注 Notes
                     </label>
                     <textarea
                       id="notes"
                       name="notes"
                       value={formData.notes}
                       onChange={handleChange}
-                      placeholder="忌口：牛/羊/海鮮或其他 / Allergies: beef, lamb, seafood, etc."
+                      placeholder="忌口：牛/羊/海鲜或其他 / Allergies: beef, lamb, seafood, etc."
                       rows={4}
                       className="form-input resize-none"
                     />

@@ -11,7 +11,7 @@ const earthToneColors: ColorSwatch[] = [
   { name: "Almond / 米杏色", hex: "#E9DCC0" },
   { name: "Khaki / 卡其色", hex: "#D9B99B" },
   { name: "Caramel / 棕褐色", hex: "#B88E74" },
-  { name: "Deep Coffee / 深啡色", hex: "#5D4D4A", textDark: true },
+  { name: "Deep Coffee / 深咖啡色", hex: "#5D4D4A", textDark: true },
 ];
 
 // Color swatch component

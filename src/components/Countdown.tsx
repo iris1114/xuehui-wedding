@@ -8,8 +8,8 @@ interface TimeLeft {
   seconds: number;
 }
 
-// Wedding date: April 18, 2026
-const WEDDING_DATE = new Date("2026-04-18T11:00:00");
+// Wedding date: October 3, 2026 — banquet starts at 7pm
+const WEDDING_DATE = new Date("2026-10-03T19:00:00");
 
 function calculateTimeLeft(): TimeLeft {
   const now = new Date();
@@ -135,7 +135,7 @@ export default function Countdown() {
             transition={{ duration: 0.6 }}
             className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-8 md:mb-12"
           >
-            Counting down to our special day
+            倒数计时
           </motion.p>
 
           {/* Countdown Timer */}
