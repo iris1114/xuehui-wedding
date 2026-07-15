@@ -69,10 +69,10 @@ export default function SharePhotos() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
+          <p className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
             Capture the Day
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-charcoal">
+          <h2 className="font-serif text-4xl  md:text-5xl font-light text-charcoal">
             Share Your Photos
           </h2>
           <div className="decorative-line mt-6" />
@@ -123,7 +123,7 @@ export default function SharePhotos() {
 
           <motion.p
             variants={itemVariants}
-            className="mt-6 font-sans text-xs text-muted"
+            className="mt-6 font-sans text-md text-muted"
           >
             Click the button above to open the folder, then drag and drop your
             photos to upload.

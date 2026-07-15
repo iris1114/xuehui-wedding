@@ -64,13 +64,13 @@ function ScheduleCard({
         transition={{ duration: 0.4, delay: index * 0.15 + 0.2 }}
         className="absolute left-3 md:left-5 top-1 w-6 h-6 md:w-7 md:h-7 rounded-full bg-cream border border-muted flex items-center justify-center"
       >
-        <span className="text-xs">{event.icon}</span>
+        <span className="text-md">{event.icon}</span>
       </motion.div>
 
       {/* Card Content */}
       <div className="bg-white/40 border border-muted-light/50 p-5 md:p-6 transition-all duration-300 hover:bg-white/60 hover:shadow-sm">
         {/* Time */}
-        <span className="font-sans text-xs tracking-[0.2em] text-muted uppercase">
+        <span className="font-sans text-md tracking-[0.2em] text-muted uppercase">
           {event.time}
         </span>
 
@@ -100,16 +100,16 @@ export default function Schedule() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
+          <p className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
             流程
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-charcoal">
+          <h2 className="font-serif text-4xl md:text-5xl font-light text-charcoal">
             Schedule
           </h2>
-          <p className="font-serif text-base md:text-lg text-charcoal-light mt-4">
+          <p className="font-serif text-xl md:text-lg text-charcoal-light mt-4">
             03 / 10 / 2026
           </p>
-          <p className="font-sans text-sm text-muted mt-1">农历八月廿三</p>
+          <p className="font-sans text-md text-muted mt-1">农历八月廿三</p>
           <div className="decorative-line mt-6" />
         </motion.div>
 

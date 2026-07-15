@@ -61,7 +61,7 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="mt-10 font-sans text-xs text-muted tracking-wider"
+            className="mt-10 font-sans text-sm text-muted tracking-wider"
           >
             © {currentYear} • Made with love
           </motion.p>

@@ -97,10 +97,10 @@ export default function Venue() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
+          <p className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
             地點
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-charcoal">
+          <h2 className="font-serif text-4xl  md:text-5xl font-light text-charcoal">
             The Venue
           </h2>
           <div className="decorative-line mt-6" />
@@ -134,7 +134,7 @@ export default function Venue() {
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <MapPinIcon className="w-5 h-5 text-muted" />
-                <span className="font-sans text-xs tracking-[0.2em] text-muted uppercase">
+                <span className="font-sans text-md tracking-[0.2em] text-muted uppercase">
                   Location
                 </span>
               </div>

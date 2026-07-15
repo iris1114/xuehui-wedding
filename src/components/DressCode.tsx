@@ -36,7 +36,7 @@ function ColorSwatchCard({
         className="w-10 h-10 md:w-10 md:h-10 rounded-full shadow-md border-2 border-white/50 mb-3"
         style={{ backgroundColor: color.hex }}
       />
-      <span className="font-sans text-xs md:text-sm text-charcoal-light text-center">
+      <span className="font-sans text-md md:text-sm text-charcoal-light text-center">
         {color.name}
       </span>
     </motion.div>
@@ -115,10 +115,10 @@ export default function DressCode() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
+          <p className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
             What to Wear
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-charcoal">
+          <h2 className="font-serif text-4xl  md:text-5xl font-light text-charcoal">
             Dress Code
           </h2>
           <div className="decorative-line mt-6" />
@@ -159,7 +159,7 @@ export default function DressCode() {
               >
                 <DressIcon className="w-full h-full text-charcoal-light" />
               </motion.div>
-              <span className="font-sans text-xs md:text-sm text-muted tracking-wide uppercase">
+              <span className="font-sans text-md md:text-sm text-muted tracking-wide uppercase">
                 Ladies
               </span>
             </div>
@@ -171,7 +171,7 @@ export default function DressCode() {
               >
                 <SuitIcon className="w-full h-full text-charcoal-light" />
               </motion.div>
-              <span className="font-sans text-xs md:text-sm text-muted tracking-wide uppercase">
+              <span className="font-sans text-md md:text-sm text-muted tracking-wide uppercase">
                 Gentlemen
               </span>
             </div>
@@ -179,7 +179,7 @@ export default function DressCode() {
 
           {/* Color Palette */}
           <motion.div variants={itemVariants} className="pb-8">
-            <p className="font-sans text-xs md:text-sm tracking-[0.2em] text-muted uppercase text-center mb-8">
+            <p className="font-sans text-md md:text-sm tracking-[0.2em] text-muted uppercase text-center mb-8">
               Suggested Color Palette
             </p>
             <div className="flex flex-wrap justify-center gap-6">

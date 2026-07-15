@@ -133,7 +133,7 @@ export default function Countdown() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-8 md:mb-12"
+            className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-8 md:mb-12"
           >
             倒数计时
           </motion.p>

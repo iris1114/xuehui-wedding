@@ -56,10 +56,10 @@ export default function Gallery() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="font-sans text-xs md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
+          <p className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
             Our Moments
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-charcoal">
+          <h2 className="font-serif text-4xl  md:text-5xl font-light text-charcoal">
             美好时刻
           </h2>
           <div className="decorative-line mt-6" />
@@ -91,14 +91,14 @@ export default function Gallery() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="watermark-xi text-4xl md:text-5xl mb-4 drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]"
+            className="watermark-xi text-4xl md:text-4xl  md:text-5xl  mb-4 drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]"
           >
             囍
           </motion.span>
           <p className="font-script text-2xl md:text-3xl text-cream mb-3 drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
             Yi Kai &amp; Xue Hui
           </p>
-          <p className="font-sans text-xs md:text-sm tracking-[0.35em] text-cream/85 uppercase">
+          <p className="font-sans text-md md:text-sm tracking-[0.35em] text-cream/85 uppercase">
             执子之手 · 与子偕老
           </p>
         </div>
