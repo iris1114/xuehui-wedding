@@ -101,12 +101,12 @@ export default function Schedule() {
           className="text-center mb-12 md:mb-16"
         >
           <p className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
-            流程
+            Schedule
           </p>
           <h2 className="font-serif text-4xl md:text-5xl font-light text-charcoal">
-            Schedule
+            流程
           </h2>
-          <p className="font-serif text-xl md:text-lg text-charcoal-light mt-4">
+          <p className="font-serif text-2xl text-charcoal-light mt-4">
             03 / 10 / 2026
           </p>
           <p className="font-sans text-md text-muted mt-1">农历八月廿三</p>

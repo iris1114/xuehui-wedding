@@ -170,14 +170,14 @@ export default function RSVP() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
+          <p className="font-sans text-lg tracking-[0.3em] text-muted uppercase mb-4">
             期待您的莅临
           </p>
           <p className="font-sans text-sm md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
             We Hope You Can Make It
           </p>
           <h2 className="font-serif text-4xl  md:text-5xl font-light text-charcoal">
-            RSVP
+            出席回复
           </h2>
           <div className="decorative-line mt-6" />
         </motion.div>

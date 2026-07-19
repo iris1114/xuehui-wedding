@@ -98,10 +98,10 @@ export default function Venue() {
           className="text-center mb-12 md:mb-16"
         >
           <p className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-4">
-            地點
+            The Venue
           </p>
           <h2 className="font-serif text-4xl  md:text-5xl font-light text-charcoal">
-            The Venue
+            地点
           </h2>
           <div className="decorative-line mt-6" />
         </motion.div>

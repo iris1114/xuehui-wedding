@@ -261,7 +261,7 @@ export default function Hero() {
           {/* Pre-title */}
           <motion.p
             variants={itemVariants}
-            className="font-sans text-md md:text-sm tracking-[0.3em] text-muted uppercase mb-4 md:mb-6"
+            className="font-sans text-lg tracking-[0.3em] text-muted uppercase mb-6 md:mb-6"
           >
             诚邀您出席我们的新婚喜宴
           </motion.p>
@@ -286,7 +286,7 @@ export default function Hero() {
 
           {/* Date */}
           <motion.div variants={itemVariants} className="space-y-2">
-            <p className="font-sans text-md md:text-sm tracking-[0.4em] text-charcoal-light uppercase">
+            <p className="font-sans text-lg tracking-[0.4em] text-charcoal-light uppercase">
               星期六
             </p>
             <p className="font-serif text-3xl md:text-3xl tracking-wider text-charcoal">
